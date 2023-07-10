@@ -1,8 +1,6 @@
 services:
   app:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: nginx-unit-example
     ports:
       - 8080:8000
       - 9090:9000

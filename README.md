@@ -7,6 +7,7 @@ This repository demonstrates how to set up Nginx Unit to start and manage Go and
 Run it with the following command:
 
 ```bash
+docker build -t nginx-unit-example .
 docker compose up
 ```
 
