@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "starlette-demo"
+version = "0.1.0"
+description = ""
+authors = ["Ihar Suvorau <ihar.suvorau@gmail.com>"]
+packages = [{ include = "starlette_demo" }]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+uvicorn = "^0.22.0"
+starlette = "^0.28.0"
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

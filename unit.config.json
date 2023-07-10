@@ -1,0 +1,51 @@
+{
+    "listeners": {
+        "*:9000": {
+            "pass": "applications/go"
+        },
+        "*:8000": {
+            "pass": "applications/python"
+        },
+        "*:8080": {
+            "pass": "routes"
+        }
+    },
+    "routes": [
+        {
+            "match": {
+                "uri": [
+                    "/go"
+                ]
+            },
+            "action": {
+                "pass": "applications/go"
+            }
+        },
+        {
+            "match": {
+                "uri": [
+                    "/python*"
+                ]
+            },
+            "action": {
+                "pass": "applications/python"
+            }
+        }
+    ],
+    "applications": {
+        "go": {
+            "type": "external",
+            "working_directory": "/apps/go-app",
+            "executable": "/apps/go-app/go-app"
+        },
+        "python": {
+            "type": "python",
+            "working_directory": "/apps/python-app/",
+            "path": "/apps/python-app/",
+            "home": ".venv/",
+            "module": "starlette_demo.main",
+            "callable": "app",
+            "protocol": "asgi"
+        }
+    }
+}
